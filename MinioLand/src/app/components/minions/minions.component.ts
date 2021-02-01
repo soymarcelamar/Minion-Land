@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MinionsService, Minion } from 'src/app/services/minions.service';
 
 @Component({
   selector: 'app-minions',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MinionsComponent implements OnInit {
 
-  constructor() { }
+  minions: Minion[] = [];
 
-  ngOnInit(): void {
+  constructor(private minionsService: MinionsService) { }
+
+  ngOnInit() {
+    this.minions = this.minionsService.getMinions();
+    console.log(this.minions);
   }
-
 }

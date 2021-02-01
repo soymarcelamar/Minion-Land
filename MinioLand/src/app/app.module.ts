@@ -9,6 +9,8 @@ import { HomeComponent } from './components/shared/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { MinionsComponent } from './components/minions/minions.component';
 
+import { MinionsService } from './services/minions.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +23,7 @@ import { MinionsComponent } from './components/minions/minions.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [MinionsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
